@@ -52,13 +52,13 @@ export function About() {
             <motion.div 
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-              className="absolute -right-4 top-10 glass-card px-4 py-3 flex items-center gap-3 rounded-xl shadow-lg border border-white/10"
+              className="absolute -right-4 top-10 glass-card px-4 py-3 flex items-center gap-3 rounded-xl shadow-lg border border-text-primary/10"
             >
               <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
                 <Globe className="text-primary w-5 h-5" />
               </div>
               <div>
-                <p className="text-sm font-bold text-white">Frontend</p>
+                <p className="text-sm font-bold text-text-primary">Frontend</p>
                 <p className="text-xs text-text-secondary">React & UI</p>
               </div>
             </motion.div>
@@ -66,13 +66,13 @@ export function About() {
             <motion.div 
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 }}
-              className="absolute -left-4 bottom-10 glass-card px-4 py-3 flex items-center gap-3 rounded-xl shadow-lg border border-white/10"
+              className="absolute -left-4 bottom-10 glass-card px-4 py-3 flex items-center gap-3 rounded-xl shadow-lg border border-text-primary/10"
             >
               <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center">
                 <Server className="text-secondary w-5 h-5" />
               </div>
               <div>
-                <p className="text-sm font-bold text-white">Backend</p>
+                <p className="text-sm font-bold text-text-primary">Backend</p>
                 <p className="text-xs text-text-secondary">Node & APIs</p>
               </div>
             </motion.div>
@@ -86,7 +86,7 @@ export function About() {
             transition={{ duration: 0.7 }}
             className="space-y-6"
           >
-            <h3 className="text-2xl md:text-3xl font-bold text-white">
+            <h3 className="text-2xl md:text-3xl font-bold text-text-primary">
               Full Stack Developer focusing on <span className="text-gradient">clean UI/UX</span> and scalable architectures.
             </h3>
             
@@ -100,9 +100,9 @@ export function About() {
 
             <div className="grid grid-cols-2 gap-4 pt-6">
               {stats.map((stat, i) => (
-                <Card key={i} className="bg-white/5 border-white/10">
+                <Card key={i} className="bg-text-primary/5 border-text-primary/10">
                   <CardContent className="p-4 text-center">
-                    <p className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}</p>
+                    <p className="text-3xl md:text-4xl font-bold text-text-primary mb-1">{stat.value}</p>
                     <p className="text-xs md:text-sm text-text-secondary font-medium uppercase tracking-wider">{stat.label}</p>
                   </CardContent>
                 </Card>

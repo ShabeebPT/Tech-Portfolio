@@ -14,18 +14,6 @@ export function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <iframe 
-          src="https://www.youtube.com/embed/yJg-Y5byzP8?autoplay=1&mute=1&loop=1&playlist=yJg-Y5byzP8&controls=0&showinfo=0&rel=0&modestbranding=1" 
-          className="w-full h-full object-cover opacity-30 mix-blend-screen scale-[1.5] md:scale-[1.2]"
-          allow="autoplay; encrypted-media"
-          title="Tech Background"
-        ></iframe>
-        {/* Gradient Overlay to blend bottom seamlessly */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
-      </div>
-
       {/* Background gradients */}
       <div className="absolute top-1/4 -left-64 w-96 h-96 bg-primary/20 rounded-full blur-[128px] z-0" />
       <div className="absolute bottom-1/4 -right-64 w-96 h-96 bg-secondary/20 rounded-full blur-[128px]" />
@@ -43,7 +31,7 @@ export function Hero() {
               <h2 className="text-xl md:text-2xl font-medium text-primary mb-2">
                 Hi, I'm
               </h2>
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4 text-white">
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4 text-text-primary">
                 {portfolioConfig.name}
               </h1>
               <h2 className="text-3xl md:text-5xl font-bold text-text-secondary">
@@ -99,8 +87,8 @@ export function Hero() {
               {/* Animated glowing border/backdrop */}
               <div className="absolute -inset-1 bg-gradient-to-tr from-primary via-secondary to-accent rounded-full blur-xl opacity-30 group-hover:opacity-60 transition duration-500 group-hover:duration-200 animate-pulse" />
               
-              <div className="relative w-full h-full rounded-full overflow-hidden border border-white/10 glass shadow-2xl bg-[#0A0A0A]/80 p-2">
-                <div className="w-full h-full rounded-full overflow-hidden bg-white/5 relative">
+              <div className="relative w-full h-full rounded-full overflow-hidden border border-text-primary/10 glass shadow-2xl bg-[#0A0A0A]/80 p-2">
+                <div className="w-full h-full rounded-full overflow-hidden bg-text-primary/5 relative">
                   <img 
                     src="/profilephoto.jpeg" 
                     alt="Developer Profile" 

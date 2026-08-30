@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/utils/cn";
 import { portfolioConfig } from "@/data/portfolioConfig";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { useTheme } from "@/hooks/useTheme";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -17,6 +18,7 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,7 +79,7 @@ export function Navbar() {
               e.preventDefault();
               scrollTo("#home");
             }}
-            className="text-xl font-bold font-mono tracking-tighter text-white z-50 flex items-center gap-1 group"
+            className="text-xl font-bold font-mono tracking-tighter text-text-primary z-50 flex items-center gap-1 group"
           >
             <span className="text-primary group-hover:text-accent transition-colors">&lt;</span>
             {portfolioConfig.name.split(" ")[0]}
@@ -97,24 +99,42 @@ export function Navbar() {
                   className={cn(
                     "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300",
                     activeSection === link.href.substring(1)
-                      ? "text-white bg-white/10"
-                      : "text-text-secondary hover:text-white hover:bg-white/5"
+                      ? "text-text-primary bg-text-primary/10"
+                      : "text-text-secondary hover:text-text-primary hover:bg-text-primary/5"
                   )}
                 >
                   {link.name}
                 </a>
               </li>
             ))}
+            <li>
+              <button
+                onClick={toggleTheme}
+                className="ml-4 p-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-text-primary/5 transition-colors"
+                aria-label="Toggle Theme"
+              >
+                {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+              </button>
+            </li>
           </ul>
 
-          {/* Mobile Menu Toggle */}
-          <button
-            className="md:hidden text-text-secondary hover:text-white z-50 transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle Menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Menu Toggle & Theme Toggle */}
+          <div className="md:hidden flex items-center gap-4 z-50">
+            <button
+              onClick={toggleTheme}
+              className="p-2 text-text-secondary hover:text-text-primary transition-colors"
+              aria-label="Toggle Theme"
+            >
+              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+            <button
+              className="text-text-secondary hover:text-text-primary transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle Menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </nav>
       </div>
 

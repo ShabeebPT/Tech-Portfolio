@@ -12,7 +12,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const variants = {
       default: "bg-primary text-white hover:bg-primary/90",
       outline: "border border-border bg-transparent hover:bg-secondary-bg text-text-primary",
-      ghost: "bg-transparent hover:bg-white/5 text-text-primary",
+      ghost: "bg-transparent hover:bg-text-primary/5 text-text-primary",
       glow: "bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_25px_rgba(59,130,246,0.7)] transition-all",
     };
 

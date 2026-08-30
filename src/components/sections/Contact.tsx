@@ -65,40 +65,40 @@ export function Contact() {
             className="md:col-span-2 space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-white mb-4">Get in Touch</h3>
+              <h3 className="text-2xl font-bold text-text-primary mb-4">Get in Touch</h3>
               <p className="text-text-secondary leading-relaxed">
                 Whether you have a question, a project proposal, or just want to say hi, my inbox is always open. I'll try my best to get back to you!
               </p>
             </div>
 
             <div className="space-y-4">
-              <a href={`mailto:${portfolioConfig.email}`} className="flex items-center gap-4 text-text-secondary hover:text-primary transition-colors p-4 rounded-xl hover:bg-white/5 border border-transparent hover:border-white/10 group">
+              <a href={`mailto:${portfolioConfig.email}`} className="flex items-center gap-4 text-text-secondary hover:text-primary transition-colors p-4 rounded-xl hover:bg-text-primary/5 border border-transparent hover:border-text-primary/10 group">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Mail className="text-primary" />
                 </div>
                 <div>
                   <p className="text-sm text-text-secondary font-medium">Email</p>
-                  <p className="text-white font-medium">{portfolioConfig.email}</p>
+                  <p className="text-text-primary font-medium">{portfolioConfig.email}</p>
                 </div>
               </a>
 
-              <a href={portfolioConfig.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-text-secondary hover:text-white transition-colors p-4 rounded-xl hover:bg-white/5 border border-transparent hover:border-white/10 group">
-                <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Code2 className="text-white" />
+              <a href={portfolioConfig.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-text-secondary hover:text-text-primary transition-colors p-4 rounded-xl hover:bg-text-primary/5 border border-transparent hover:border-text-primary/10 group">
+                <div className="w-12 h-12 rounded-full bg-text-primary/5 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Code2 className="text-text-primary" />
                 </div>
                 <div>
                   <p className="text-sm text-text-secondary font-medium">GitHub</p>
-                  <p className="text-white font-medium">github.com/{portfolioConfig.github.split('/').pop()}</p>
+                  <p className="text-text-primary font-medium">github.com/{portfolioConfig.github.split('/').pop()}</p>
                 </div>
               </a>
 
-              <a href={portfolioConfig.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-text-secondary hover:text-[#0A66C2] transition-colors p-4 rounded-xl hover:bg-white/5 border border-transparent hover:border-white/10 group">
+              <a href={portfolioConfig.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-text-secondary hover:text-[#0A66C2] transition-colors p-4 rounded-xl hover:bg-text-primary/5 border border-transparent hover:border-text-primary/10 group">
                 <div className="w-12 h-12 rounded-full bg-[#0A66C2]/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Briefcase className="text-[#0A66C2]" />
                 </div>
                 <div>
                   <p className="text-sm text-text-secondary font-medium">LinkedIn</p>
-                  <p className="text-white font-medium">linkedin.com/in/{portfolioConfig.linkedin.split('/').pop()}</p>
+                  <p className="text-text-primary font-medium">linkedin.com/in/{portfolioConfig.linkedin.split('/').pop()}</p>
                 </div>
               </a>
             </div>
@@ -122,7 +122,7 @@ export function Contact() {
                   <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mb-6">
                     <CheckCircle2 size={40} className="text-green-500" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
+                  <h3 className="text-2xl font-bold text-text-primary mb-2">Message Sent!</h3>
                   <p className="text-text-secondary">Thank you for reaching out. I'll get back to you as soon as possible.</p>
                 </motion.div>
               ) : (
@@ -133,7 +133,7 @@ export function Contact() {
                       <input
                         id="name"
                         {...register("name")}
-                        className={`w-full bg-background/50 border ${errors.name ? 'border-red-500/50 focus:border-red-500 focus:ring-red-500/20' : 'border-border focus:border-primary focus:ring-primary/20'} rounded-lg px-4 py-3 text-white outline-none focus:ring-2 transition-all`}
+                        className={`w-full bg-background/50 border ${errors.name ? 'border-red-500/50 focus:border-red-500 focus:ring-red-500/20' : 'border-border focus:border-primary focus:ring-primary/20'} rounded-lg px-4 py-3 text-text-primary outline-none focus:ring-2 transition-all`}
                         placeholder="Your name"
                       />
                       {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>}
@@ -144,7 +144,7 @@ export function Contact() {
                       <input
                         id="email"
                         {...register("email")}
-                        className={`w-full bg-background/50 border ${errors.email ? 'border-red-500/50 focus:border-red-500 focus:ring-red-500/20' : 'border-border focus:border-primary focus:ring-primary/20'} rounded-lg px-4 py-3 text-white outline-none focus:ring-2 transition-all`}
+                        className={`w-full bg-background/50 border ${errors.email ? 'border-red-500/50 focus:border-red-500 focus:ring-red-500/20' : 'border-border focus:border-primary focus:ring-primary/20'} rounded-lg px-4 py-3 text-text-primary outline-none focus:ring-2 transition-all`}
                         placeholder="Your email"
                       />
                       {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email.message}</p>}
@@ -156,7 +156,7 @@ export function Contact() {
                     <input
                       id="subject"
                       {...register("subject")}
-                      className={`w-full bg-background/50 border ${errors.subject ? 'border-red-500/50 focus:border-red-500 focus:ring-red-500/20' : 'border-border focus:border-primary focus:ring-primary/20'} rounded-lg px-4 py-3 text-white outline-none focus:ring-2 transition-all`}
+                      className={`w-full bg-background/50 border ${errors.subject ? 'border-red-500/50 focus:border-red-500 focus:ring-red-500/20' : 'border-border focus:border-primary focus:ring-primary/20'} rounded-lg px-4 py-3 text-text-primary outline-none focus:ring-2 transition-all`}
                       placeholder="Project Inquiry"
                     />
                     {errors.subject && <p className="text-red-400 text-xs mt-1">{errors.subject.message}</p>}
@@ -168,7 +168,7 @@ export function Contact() {
                       id="message"
                       {...register("message")}
                       rows={5}
-                      className={`w-full bg-background/50 border ${errors.message ? 'border-red-500/50 focus:border-red-500 focus:ring-red-500/20' : 'border-border focus:border-primary focus:ring-primary/20'} rounded-lg px-4 py-3 text-white outline-none focus:ring-2 transition-all resize-none`}
+                      className={`w-full bg-background/50 border ${errors.message ? 'border-red-500/50 focus:border-red-500 focus:ring-red-500/20' : 'border-border focus:border-primary focus:ring-primary/20'} rounded-lg px-4 py-3 text-text-primary outline-none focus:ring-2 transition-all resize-none`}
                       placeholder="Tell me about your project..."
                     />
                     {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message.message}</p>}

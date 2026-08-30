@@ -35,7 +35,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-text-primary selection:bg-primary/30 selection:text-white font-sans overflow-x-hidden">
+    <div className="min-h-screen bg-background text-text-primary selection:bg-primary/30 selection:text-text-primary font-sans overflow-x-hidden transition-colors duration-500">
       <CustomCursor />
       
       {/* Background Grid */}
@@ -58,7 +58,7 @@ function App() {
         
         {/* Experience and Education together for better layout flow */}
         <div className="relative">
-          <div className="absolute inset-0 bg-secondary-bg/50 skew-y-3 origin-top-left -z-10 border-y border-white/5" />
+          <div className="absolute inset-0 bg-secondary-bg/50 skew-y-3 origin-top-left -z-10 border-y border-text-primary/5" />
           <Experience />
           <Education />
         </div>
@@ -74,7 +74,7 @@ function App() {
         href={portfolioConfig.resume}
         target="_blank"
         rel="noopener noreferrer"
-        className="hidden md:flex fixed bottom-8 right-8 bg-card border border-white/10 hover:border-primary/50 text-white px-4 py-3 rounded-full items-center gap-2 shadow-2xl z-40 transition-all hover:-translate-y-1 hover:shadow-primary/20"
+        className="hidden md:flex fixed bottom-8 right-8 bg-card border border-text-primary/10 hover:border-primary/50 text-text-primary px-4 py-3 rounded-full items-center gap-2 shadow-2xl z-40 transition-all hover:-translate-y-1 hover:shadow-primary/20"
       >
         <span className="text-sm font-medium">Resume</span>
         <ArrowDown size={16} className="text-primary" />

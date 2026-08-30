@@ -19,7 +19,7 @@ export function Services() {
   };
 
   return (
-    <section className="py-24 relative bg-black/20 border-y border-white/5">
+    <section className="py-24 relative bg-text-primary/20 border-y border-text-primary/5">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
           title="What I Can Build" 
@@ -47,7 +47,7 @@ export function Services() {
                     <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                       <Icon className="text-primary w-6 h-6" />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
+                    <h3 className="text-xl font-bold text-text-primary mb-3">{service.title}</h3>
                     <p className="text-text-secondary leading-relaxed">
                       {service.description}
                     </p>

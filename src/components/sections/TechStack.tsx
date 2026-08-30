@@ -10,10 +10,10 @@ export function TechStack() {
   ];
 
   return (
-    <section className="py-20 relative overflow-hidden bg-black/20 border-y border-white/5">
+    <section className="py-20 relative overflow-hidden bg-text-primary/20 border-y border-text-primary/5">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Full Stack Architecture</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-text-primary mb-4">Full Stack Architecture</h2>
           <p className="text-text-secondary">How my favorite technologies connect to build scalable applications.</p>
         </div>
 
@@ -30,7 +30,7 @@ export function TechStack() {
                 <div className={`p-[1px] rounded-xl bg-gradient-to-r ${stack.color}`}>
                   <div className="bg-card rounded-xl p-6 text-center shadow-lg relative overflow-hidden group">
                     <div className={`absolute inset-0 bg-gradient-to-r ${stack.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
-                    <h3 className="text-xl font-bold text-white mb-1">{stack.name}</h3>
+                    <h3 className="text-xl font-bold text-text-primary mb-1">{stack.name}</h3>
                     <p className="text-sm text-text-secondary uppercase tracking-wider font-medium">{stack.role}</p>
                   </div>
                 </div>

@@ -6,7 +6,7 @@ export function Education() {
   return (
     <section className="py-12 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-        <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+        <h2 className="text-2xl font-bold text-text-primary mb-8 flex items-center gap-3">
           <GraduationCap className="text-primary" />
           Education
         </h2>
@@ -25,11 +25,11 @@ export function Education() {
               
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-1">{edu.degree}</h3>
+                  <h3 className="text-xl font-bold text-text-primary mb-1">{edu.degree}</h3>
                   <p className="text-primary font-medium mb-2">{edu.field}</p>
                   <p className="text-text-secondary">{edu.institution}</p>
                 </div>
-                <div className="inline-block px-3 py-1 rounded-full bg-white/5 text-text-secondary text-sm font-mono border border-white/10 whitespace-nowrap self-start">
+                <div className="inline-block px-3 py-1 rounded-full bg-text-primary/5 text-text-secondary text-sm font-mono border border-text-primary/10 whitespace-nowrap self-start">
                   {edu.period}
                 </div>
               </div>

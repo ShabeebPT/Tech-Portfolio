@@ -39,7 +39,7 @@ export function Experience() {
               <div className="glass-card p-6 md:p-8 rounded-2xl group hover:border-primary/30 transition-colors">
                 <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
                   <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-primary transition-colors">{job.role}</h3>
+                    <h3 className="text-xl md:text-2xl font-bold text-text-primary group-hover:text-primary transition-colors">{job.role}</h3>
                     <p className="text-lg text-text-secondary font-medium">{job.company}</p>
                   </div>
                   <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-mono whitespace-nowrap self-start md:self-auto border border-primary/20">
