@@ -13,17 +13,15 @@ import { CustomCursor } from "@/components/ui/CustomCursor";
 import { portfolioConfig } from "@/data/portfolioConfig";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { ArrowDown } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 function App() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
-    restDelta: 0.001
+    restDelta: 0.001,
   });
-
-  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
     // Setup document title and meta description dynamically based on config
@@ -37,10 +35,10 @@ function App() {
   return (
     <div className="min-h-screen bg-background text-text-primary selection:bg-primary/30 selection:text-text-primary font-sans overflow-x-hidden transition-colors duration-500">
       <CustomCursor />
-      
+
       {/* Background Grid */}
       <div className="fixed inset-0 pointer-events-none bg-grid z-[-1]" />
-      
+
       {/* Top Progress Bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent origin-left z-[100]"
@@ -55,14 +53,14 @@ function App() {
         <Skills />
         <TechStack />
         <Projects />
-        
+
         {/* Experience and Education together for better layout flow */}
         <div className="relative">
           <div className="absolute inset-0 bg-secondary-bg/50 skew-y-3 origin-top-left -z-10 border-y border-text-primary/5" />
           <Experience />
           <Education />
         </div>
-        
+
         <Services />
         <Contact />
       </main>
@@ -70,7 +68,7 @@ function App() {
       <Footer />
 
       {/* Floating Resume Button */}
-      <a 
+      <a
         href={portfolioConfig.resume}
         target="_blank"
         rel="noopener noreferrer"
