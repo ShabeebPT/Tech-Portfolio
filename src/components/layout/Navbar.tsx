@@ -25,7 +25,7 @@ export function Navbar() {
       setIsScrolled(window.scrollY > 50);
 
       // Highlight active section
-      const sections = navLinks.map(link => link.href.substring(1));
+      const sections = navLinks.map((link) => link.href.substring(1));
       let current = "home";
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -48,7 +48,8 @@ export function Navbar() {
     setIsMobileMenuOpen(false);
     const element = document.getElementById(id.substring(1));
     if (element) {
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
         top: elementPosition - 80, // offset for navbar
         behavior: "smooth",
@@ -60,16 +61,16 @@ export function Navbar() {
     <header
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-all duration-300",
-        isScrolled ? "py-4" : "py-6"
+        isScrolled ? "py-4" : "py-6",
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <nav
           className={cn(
             "mx-auto max-w-5xl flex items-center justify-between px-6 py-3 rounded-2xl border transition-all duration-300",
-            isScrolled 
+            isScrolled
               ? "bg-secondary-bg/80 backdrop-blur-md border-border/50 shadow-lg shadow-black/20"
-              : "bg-transparent border-transparent"
+              : "bg-transparent border-transparent",
           )}
         >
           {/* Logo */}
@@ -81,9 +82,13 @@ export function Navbar() {
             }}
             className="text-xl font-bold font-mono tracking-tighter text-text-primary z-50 flex items-center gap-1 group"
           >
-            <span className="text-primary group-hover:text-accent transition-colors">&lt;</span>
+            <span className="text-primary group-hover:text-accent transition-colors">
+              &lt;
+            </span>
             {portfolioConfig.name.split(" ")[0]}
-            <span className="text-primary group-hover:text-accent transition-colors">/&gt;</span>
+            <span className="text-primary group-hover:text-accent transition-colors">
+              /&gt;
+            </span>
           </a>
 
           {/* Desktop Nav */}
@@ -100,7 +105,7 @@ export function Navbar() {
                     "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300",
                     activeSection === link.href.substring(1)
                       ? "text-text-primary bg-text-primary/10"
-                      : "text-text-secondary hover:text-text-primary hover:bg-text-primary/5"
+                      : "text-text-secondary hover:text-text-primary hover:bg-text-primary/5",
                   )}
                 >
                   {link.name}
@@ -166,7 +171,7 @@ export function Navbar() {
                       "block text-2xl font-semibold transition-colors",
                       activeSection === link.href.substring(1)
                         ? "text-primary"
-                        : "text-text-primary"
+                        : "text-text-primary",
                     )}
                   >
                     {link.name}

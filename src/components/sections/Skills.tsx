@@ -18,6 +18,7 @@ export function Skills() {
     { id: "backend", label: "Backend", data: skills.backend },
     { id: "database", label: "Database", data: skills.database },
     { id: "tools", label: "Tools", data: skills.tools },
+    { id: "soft_skills", label: "Soft Skills", data: skills.soft_skills },
   ];
 
   const containerVariants: Variants = {
@@ -36,8 +37,8 @@ export function Skills() {
   return (
     <section id="skills" className="py-24 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading 
-          title="Technical Skills" 
+        <SectionHeading
+          title="Technical Skills"
           subtitle="My toolbox for building robust and scalable applications."
         />
 
@@ -48,8 +49,8 @@ export function Skills() {
                 <span className="w-8 h-[1px] bg-primary block"></span>
                 {category.label}
               </h3>
-              
-              <motion.div 
+
+              <motion.div
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="show"
@@ -63,8 +64,12 @@ export function Skills() {
                       <CardContent className="p-6 flex flex-col items-center text-center relative z-10 space-y-4">
                         {getIcon(skill.name)}
                         <div>
-                          <h4 className="font-semibold text-text-primary group-hover:text-primary transition-colors">{skill.name}</h4>
-                          <p className="text-xs text-text-secondary mt-1">{skill.description}</p>
+                          <h4 className="font-semibold text-text-primary group-hover:text-primary transition-colors">
+                            {skill.name}
+                          </h4>
+                          <p className="text-xs text-text-secondary mt-1">
+                            {skill.description}
+                          </p>
                         </div>
                       </CardContent>
                     </Card>

@@ -11,11 +11,14 @@ import { Services } from "@/components/sections/Services";
 import { Contact } from "@/components/sections/Contact";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 import { portfolioConfig } from "@/data/portfolioConfig";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
 import { ArrowDown } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { TerminalWrapper } from "@/components/ui/TerminalWrapper";
+import { SplashScreen } from "@/components/ui/SplashScreen";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -33,7 +36,13 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-text-primary selection:bg-primary/30 selection:text-text-primary font-sans overflow-x-hidden transition-colors duration-500">
+    <div
+      className={`min-h-screen bg-background text-text-primary selection:bg-primary/30 selection:text-text-primary font-sans transition-colors duration-500 ${isLoading ? "overflow-hidden" : "overflow-x-hidden"}`}
+    >
+      <AnimatePresence mode="wait">
+        {isLoading && <SplashScreen onComplete={() => setIsLoading(false)} />}
+      </AnimatePresence>
+
       <CustomCursor />
 
       {/* Background Grid */}
@@ -68,6 +77,7 @@ function App() {
       <Footer />
 
       {/* Floating Resume Button */}
+      <TerminalWrapper />
       <a
         href={portfolioConfig.resume}
         target="_blank"

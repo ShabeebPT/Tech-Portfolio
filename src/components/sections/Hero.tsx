@@ -52,9 +52,15 @@ export function Hero() {
                 variant="glow"
                 size="lg"
                 onClick={() => {
-                  document
-                    .getElementById("projects")
-                    ?.scrollIntoView({ behavior: "smooth" });
+                  const element = document.getElementById("projects");
+                  if (element) {
+                    const elementPosition =
+                      element.getBoundingClientRect().top + window.scrollY;
+                    window.scrollTo({
+                      top: elementPosition - 80,
+                      behavior: "smooth",
+                    });
+                  }
                 }}
                 className="group"
               >
@@ -64,7 +70,14 @@ export function Hero() {
               <Button
                 variant="outline"
                 size="lg"
-                onClick={() => window.open(portfolioConfig.resume, "_blank")}
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = portfolioConfig.resume;
+                  link.download = "CV_FILE.pdf";
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
               >
                 <FileText className="mr-2 h-4 w-4" />
                 Download Resume

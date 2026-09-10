@@ -13,7 +13,7 @@ export function Education() {
 
         <div className="space-y-6">
           {education.map((edu: any, index: number) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -22,10 +22,12 @@ export function Education() {
               className="glass-card p-6 md:p-8 rounded-2xl relative overflow-hidden group"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors duration-500" />
-              
+
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
                 <div>
-                  <h3 className="text-xl font-bold text-text-primary mb-1">{edu.degree}</h3>
+                  <h3 className="text-xl font-bold text-text-primary mb-1">
+                    {edu.degree}
+                  </h3>
                   <p className="text-primary font-medium mb-2">{edu.field}</p>
                   <p className="text-text-secondary">{edu.institution}</p>
                 </div>
