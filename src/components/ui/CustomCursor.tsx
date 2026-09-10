@@ -11,10 +11,10 @@ export function CustomCursor() {
     const checkMobile = () => {
       setIsMobile(window.matchMedia("(hover: none)").matches);
     };
-    
+
     checkMobile();
     window.addEventListener("resize", checkMobile);
-    
+
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
@@ -23,11 +23,11 @@ export function CustomCursor() {
       const target = e.target as HTMLElement;
       // Check if hovering over interactive elements
       if (
-        target.tagName.toLowerCase() === 'a' ||
-        target.tagName.toLowerCase() === 'button' ||
-        target.closest('a') ||
-        target.closest('button') ||
-        target.classList.contains('cursor-pointer')
+        target.tagName.toLowerCase() === "a" ||
+        target.tagName.toLowerCase() === "button" ||
+        target.closest("a") ||
+        target.closest("button") ||
+        target.classList.contains("cursor-pointer")
       ) {
         setIsHovering(true);
       } else {
@@ -61,7 +61,7 @@ export function CustomCursor() {
         }}
         transition={{ type: "spring", stiffness: 1000, damping: 50, mass: 0.1 }}
       />
-      
+
       {/* Large trailing circle */}
       <motion.div
         className="fixed top-0 left-0 w-8 h-8 border border-primary/50 rounded-full pointer-events-none z-[99]"
@@ -69,7 +69,9 @@ export function CustomCursor() {
           x: mousePosition.x - 16,
           y: mousePosition.y - 16,
           scale: isHovering ? 1.5 : 1,
-          backgroundColor: isHovering ? "rgba(59, 130, 246, 0.1)" : "transparent",
+          backgroundColor: isHovering
+            ? "rgba(59, 130, 246, 0.1)"
+            : "transparent",
         }}
         transition={{ type: "spring", stiffness: 250, damping: 20, mass: 0.5 }}
       />

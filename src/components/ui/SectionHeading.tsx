@@ -7,10 +7,14 @@ interface SectionHeadingProps {
   className?: string;
 }
 
-export function SectionHeading({ title, subtitle, className }: SectionHeadingProps) {
+export function SectionHeading({
+  title,
+  subtitle,
+  className,
+}: SectionHeadingProps) {
   return (
     <div className={cn("mb-12 md:mb-20 text-center", className)}>
-      <motion.h2 
+      <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
@@ -20,7 +24,7 @@ export function SectionHeading({ title, subtitle, className }: SectionHeadingPro
         {title}
       </motion.h2>
       {subtitle && (
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}

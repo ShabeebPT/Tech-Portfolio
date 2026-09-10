@@ -7,14 +7,14 @@ export function Experience() {
   return (
     <section id="experience" className="py-24 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-        <SectionHeading 
-          title="Experience" 
+        <SectionHeading
+          title="Experience"
           subtitle="My professional journey and the value I've delivered."
         />
 
         <div className="relative border-l border-border/50 ml-4 md:ml-6 space-y-12 pb-8">
           {/* Glowing line overlay */}
-          <motion.div 
+          <motion.div
             className="absolute top-0 bottom-0 left-[-1px] w-[2px] bg-gradient-to-b from-primary via-secondary to-transparent origin-top"
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
@@ -23,7 +23,7 @@ export function Experience() {
           />
 
           {experience.map((job: any, index: number) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -39,8 +39,12 @@ export function Experience() {
               <div className="glass-card p-6 md:p-8 rounded-2xl group hover:border-primary/30 transition-colors">
                 <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
                   <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-text-primary group-hover:text-primary transition-colors">{job.role}</h3>
-                    <p className="text-lg text-text-secondary font-medium">{job.company}</p>
+                    <h3 className="text-xl md:text-2xl font-bold text-text-primary group-hover:text-primary transition-colors">
+                      {job.role}
+                    </h3>
+                    <p className="text-lg text-text-secondary font-medium">
+                      {job.company}
+                    </p>
                   </div>
                   <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-mono whitespace-nowrap self-start md:self-auto border border-primary/20">
                     {job.period}

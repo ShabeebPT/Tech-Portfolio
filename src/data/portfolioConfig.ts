@@ -5,7 +5,7 @@ export const portfolioConfig = {
   email: "ptmuhammadshabeeb@gmail.com",
   github: "https://github.com/ShabeebPT",
   linkedin: "https://www.linkedin.com/in/muhammed-shabeeb-pt",
-  resume: "/resume.pdf",
+  resume: "/CV_FILE.pdf",
 };
 
 export const skills = {
@@ -13,6 +13,7 @@ export const skills = {
     { name: "React", description: "UI Library", icon: "react" },
     { name: "TypeScript", description: "Static Typing", icon: "typescript" },
     { name: "JavaScript", description: "Language", icon: "javascript" },
+    { name: "Fabric.js", description: "Canvas Library", icon: "fabric" },
     { name: "HTML5", description: "Markup", icon: "html" },
     { name: "CSS3", description: "Styling", icon: "css" },
     { name: "Tailwind CSS", description: "Utility CSS", icon: "tailwind" },
@@ -21,18 +22,26 @@ export const skills = {
   backend: [
     { name: "Node.js", description: "Runtime", icon: "node" },
     { name: "Express.js", description: "Web Framework", icon: "express" },
-    { name: "REST APIs", description: "Architecture", icon: "api" },
+    { name: "RESTful API", description: "Architecture", icon: "api" },
   ],
   database: [
     { name: "MongoDB", description: "NoSQL Database", icon: "mongodb" },
     { name: "MySQL", description: "SQL Database", icon: "mysql" },
+    { name: "PostgreSQL", description: "SQL Database", icon: "postgresql" }
   ],
   tools: [
     { name: "Git", description: "Version Control", icon: "git" },
     { name: "GitHub", description: "Code Hosting", icon: "github" },
+    { name: "Gitlab", description: "Code Hosting", icon: "gitlab" },
     { name: "VS Code", description: "Code Editor", icon: "vscode" },
     { name: "Postman", description: "API Testing", icon: "postman" },
-    { name: "Figma", description: "Design Tool", icon: "figma" },
+  ],
+  soft_skills: [
+    { name: "Teamwork", description: "Teamwork", icon: "teamwork" },
+    { name: "Problem Solving", description: "Problem Solving", icon: "problem-solving" },
+    { name: "Communication", description: "Communication", icon: "communication" },
+    { name: "Adaptability", description: "Adaptability", icon: "adaptability" },
+    { name: "Time Management", description: "Time Management", icon: "time-management" },
   ],
 };
 
@@ -40,17 +49,18 @@ export const projects = [
   {
     title: "Finance & HR Management System",
     description: "A comprehensive internal tool for managing finance, employee data, payroll, and invoice generation. Includes role-based permissions and robust reporting.",
-    tech: ["React", "TypeScript", "Node.js", "Express", "MySQL", "JWT", "Razorpay"],
+    tech: ["React", "TypeScript", "Node.js", "Express", "MongoDB", "JWT", "Razorpay"],
     features: [
       "Finance dashboard",
       "Employee management",
       "Payroll & Invoice management",
       "Payment processing",
-      "Role-based permissions"
+      "Role-based permissions",
+      "Reporting & analytics",
+      "EMI Payment management",
     ],
-    github: "https://github.com/username/project",
-    demo: "https://project-demo.com",
-    image: "/project1.webp",
+    github: "https://github.com/ShabeebPT/Finance-Payments-System",
+    image: "/hrmangement.mp4",
   },
   {
     title: "Document Management System",
@@ -60,37 +70,40 @@ export const projects = [
       "Document & Invoice management",
       "Work orders & Quotations",
       "Commission management",
+      "Reports & Analytics",
+      "Master sections for Services, Customers, and Documents",
       "Email/WhatsApp automation"
     ],
-    github: "https://github.com/username/project",
-    demo: "https://project-demo.com",
-    image: "/project2.webp",
+    image: "/DocumentManagement.png",
   },
   {
-    title: "FoodShare",
-    description: "A food donation and distribution platform connecting local donors with recipients to minimize food waste and help communities.",
-    tech: ["Flutter", "Dart", "Python"],
+    title: "Doctor Appointment Web Application",
+    description: "A MERN stack-based web application that enables patients to book, manage, and track doctor appointments while allowing doctors to manage their availability and appointments.",
+    tech: ["React", "Node.js", "MongoDB", "Express", "JWT", "Tailwind CSS", "Stripe"],
     features: [
-      "Real-time location tracking",
-      "Donor and recipient profiles",
-      "Donation scheduling"
+      "Developed a patient appointment booking and management system using the MERN stack.",
+      "Implemented user authentication and role-based access for patients and doctors.",
+      "Enabled doctors to manage their availability and view scheduled appointments.",
+      "Provided patients with features to book, track, and manage appointments.",
+      "Implemented appointment reminders to help users stay informed about upcoming appointments."
     ],
-    github: "https://github.com/username/project",
-    demo: "https://project-demo.com",
-    image: "/project3.webp",
+    github: "https://github.com/zadic42/Doctor_Appointment_Web_Application",
+    demo: "https://prescripto-b0fj.onrender.com",
+    image: "/Animate_this_image.mp4",
   },
   {
-    title: "Violence Detection System",
-    description: "A surveillance-video analysis project utilizing Deep Learning and Computer Vision for real-time detection of violent activities.",
-    tech: ["Python", "Deep Learning", "Computer Vision"],
+    title: "Print Engine & Report Designer System",
+    description: "Designed and developed a web-based Print Engine and Report Designer similar to Jasper iReport, enabling users to create and customize dynamic printable templates using a drag-and-drop interface.",
+    tech: ["React", "Node.js", "MySQL", "Express", "Fabric.js", "Material-ui"],
     features: [
-      "Real-time video analysis",
-      "High accuracy threat detection",
-      "Alert generation"
+      "Developed an intuitive drag-and-drop template designer for creating customizable business documents.",
+      "Implemented dynamic MySQL data binding for generating invoices, quotations, work orders, reports, labels, and other documents.",
+      "Added PDF export, print preview, barcode/QR code generation, and multi-page layout support.",
+      "Implemented template version management to maintain and manage different template versions.",
+      "Developed RESTful APIs for template design, report generation, and user access control.",
+      "Built a scalable document automation solution for flexible and efficient business reporting."
     ],
-    github: "https://github.com/username/project",
-    demo: "https://project-demo.com",
-    image: "/project4.webp",
+    image: "/it_is_print_engine_create_a_s.mp4",
   },
 ];
 
