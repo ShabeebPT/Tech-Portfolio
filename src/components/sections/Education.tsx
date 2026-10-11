@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { education } from "@/data/portfolioConfig";
 import { GraduationCap } from "lucide-react";
