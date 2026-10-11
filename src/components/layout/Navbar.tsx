@@ -1,7 +1,10 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { cn } from "@/utils/cn";
 import { portfolioConfig } from "@/data/portfolioConfig";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Switch from "@/components/ui/sky-toggle";
 import { useTheme } from "@/hooks/useTheme";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -112,28 +115,26 @@ export function Navbar() {
                 </a>
               </li>
             ))}
-            <li>
-              <button
-                onClick={toggleTheme}
-                className="ml-4 p-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-text-primary/5 transition-colors"
+            <li className="ml-3 flex items-center">
+              <Switch
+                checked={theme === "dark"}
+                onChange={toggleTheme}
+                size="10px"
                 aria-label="Toggle Theme"
-              >
-                {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-              </button>
+              />
             </li>
           </ul>
 
           {/* Mobile Menu Toggle & Theme Toggle */}
-          <div className="md:hidden flex items-center gap-4 z-50">
-            <button
-              onClick={toggleTheme}
-              className="p-2 text-text-secondary hover:text-text-primary transition-colors"
+          <div className="md:hidden flex items-center gap-3 z-50">
+            <Switch
+              checked={theme === "dark"}
+              onChange={toggleTheme}
+              size="9.5px"
               aria-label="Toggle Theme"
-            >
-              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
+            />
             <button
-              className="text-text-secondary hover:text-text-primary transition-colors"
+              className="text-text-secondary hover:text-text-primary transition-colors p-1"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle Menu"
             >

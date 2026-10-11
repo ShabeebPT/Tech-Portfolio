@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--bg);
+  --color-secondary-bg: var(--bg-secondary);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --font-sans: var(--font-inter), "Inter", sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", monospace;
+}
+
+@layer base {
+  :root {
+    /* Light Mode (Warm off-white background) */
+    --bg: #fff7ed;
+    --bg-secondary: #ffedd5;
+    --card: #ffffff;
+    --border: #fed7aa;
+    --primary: #fb923c;
+    --secondary: #f43f5e;
+    --accent: #f43f5e;
+    --text-primary: #0c0708;
+    --text-secondary: #52525b;
+  }
+
+  .dark {
+    /* Dark Mode (Deep dark charcoal background) */
+    --bg: #0c0708;
+    --bg-secondary: #181112;
+    --card: #181112;
+    --border: #271a1c;
+    --primary: #fb923c;
+    --secondary: #f43f5e;
+    --accent: #f43f5e;
+    --text-primary: #fff7ed;
+    --text-secondary: #a1a1aa;
+  }
+
+  body {
+    @apply bg-background text-text-primary antialiased;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-600;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-lg border border-border rounded-2xl;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+  }
+}
+
+.bg-grid {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--text-primary) 10%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--text-primary) 10%, transparent) 1px,
+      transparent 1px
+    );
+  mask-image: linear-gradient(to bottom, transparent, black, transparent);
+}

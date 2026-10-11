@@ -1,7 +1,10 @@
+"use client";
+
 import { motion, type Variants } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card, CardContent } from "@/components/ui/Card";
 import { skills } from "@/data/portfolioConfig";
+import StackSpread from "@/components/ui/stack-spread";
 
 // Fallback icon generator or simple colored letter if icon is not mapped
 const getIcon = (name: string) => {
@@ -35,49 +38,64 @@ export function Skills() {
   };
 
   return (
-    <section id="skills" className="py-24 relative">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          title="Technical Skills"
-          subtitle="My toolbox for building robust and scalable applications."
-        />
+    <section id="skills" className="relative">
+      {/* Interactive Stack Spread Showcase */}
+      <StackSpread
+        title={
+          <>
+            Engineering
+            <span className="text-primary"> That </span>
+            Scales.
+          </>
+        }
+        subtitle="Core technologies, architectures, and engineering disciplines that power my full-stack applications."
+      />
 
-        <div className="space-y-16">
-          {categories.map((category) => (
-            <div key={category.id}>
-              <h3 className="text-xl font-semibold text-text-primary mb-6 flex items-center gap-2">
-                <span className="w-8 h-[1px] bg-primary block"></span>
-                {category.label}
-              </h3>
+      {/* Detailed Skill Categories Toolbox */}
+      <div className="pt-6 pb-20 relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            title="Technical Toolbox"
+            subtitle="Granular breakdown of languages, libraries, and tools I use daily."
+          />
 
-              <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, margin: "-100px" }}
-                className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
-              >
-                {category.data.map((skill: any) => (
-                  <motion.div key={skill.name} variants={itemVariants}>
-                    <Card className="group hover:-translate-y-2 transition-transform duration-300 bg-text-primary/5 hover:bg-text-primary/10 border-text-primary/10 hover:border-primary/50 relative overflow-hidden h-full">
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                      <CardContent className="p-6 flex flex-col items-center text-center relative z-10 space-y-4">
-                        {getIcon(skill.name)}
-                        <div>
-                          <h4 className="font-semibold text-text-primary group-hover:text-primary transition-colors">
-                            {skill.name}
-                          </h4>
-                          <p className="text-xs text-text-secondary mt-1">
-                            {skill.description}
-                          </p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </div>
-          ))}
+          <div className="space-y-16">
+            {categories.map((category) => (
+              <div key={category.id}>
+                <h3 className="text-xl font-semibold text-text-primary mb-6 flex items-center gap-2">
+                  <span className="w-8 h-[1px] bg-primary block"></span>
+                  {category.label}
+                </h3>
+
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, margin: "-100px" }}
+                  className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
+                >
+                  {category.data.map((skill: any) => (
+                    <motion.div key={skill.name} variants={itemVariants}>
+                      <Card className="group hover:-translate-y-2 transition-transform duration-300 bg-text-primary/5 hover:bg-text-primary/10 border-text-primary/10 hover:border-primary/50 relative overflow-hidden h-full">
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <CardContent className="p-6 flex flex-col items-center text-center relative z-10 space-y-4">
+                          {getIcon(skill.name)}
+                          <div>
+                            <h4 className="font-semibold text-text-primary group-hover:text-primary transition-colors">
+                              {skill.name}
+                            </h4>
+                            <p className="text-xs text-text-secondary mt-1">
+                              {skill.description}
+                            </p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

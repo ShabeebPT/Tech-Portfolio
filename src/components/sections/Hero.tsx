@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { portfolioConfig } from "@/data/portfolioConfig";
@@ -96,7 +98,10 @@ export function Hero() {
               {/* Animated glowing border/backdrop */}
               <div className="absolute -inset-1 bg-gradient-to-tr from-primary via-secondary to-accent rounded-full blur-xl opacity-30 group-hover:opacity-60 transition duration-500 group-hover:duration-200 animate-pulse" />
 
-              <div className="relative w-full h-full rounded-full overflow-hidden border border-text-primary/10 glass shadow-2xl bg-[#0A0A0A]/80 p-2">
+              <div
+                data-no-cursor="true"
+                className="relative w-full h-full rounded-full overflow-hidden border border-text-primary/10 glass shadow-2xl bg-[#0A0A0A]/80 p-2"
+              >
                 <div className="w-full h-full rounded-full overflow-hidden bg-text-primary/5 relative">
                   <img
                     src="/profilephoto.jpeg"
@@ -109,7 +114,7 @@ export function Hero() {
                     }}
                   />
                   {/* Subtle overlay gradient to blend bottom edge */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60 pointer-events-none" />
                 </div>
               </div>
             </div>

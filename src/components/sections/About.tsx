@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card, CardContent } from "@/components/ui/Card";
@@ -29,7 +31,10 @@ export function About() {
             {/* Glow behind image */}
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-secondary/30 rounded-full blur-3xl scale-90" />
 
-            <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full p-1 bg-gradient-to-tr from-primary via-secondary to-accent">
+            <div
+              data-no-cursor="true"
+              className="relative w-72 h-72 md:w-96 md:h-96 rounded-full p-1 bg-gradient-to-tr from-primary via-secondary to-accent"
+            >
               <div className="w-full h-full rounded-full bg-card overflow-hidden border-4 border-background flex items-center justify-center relative">
                 {/* Fallback avatar if no image */}
                 <img
@@ -43,7 +48,7 @@ export function About() {
                     );
                   }}
                 />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 [.fallback-avatar_&]:opacity-100 transition-opacity">
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 [.fallback-avatar_&]:opacity-100 transition-opacity pointer-events-none">
                   <Code2 size={64} className="text-text-secondary opacity-50" />
                 </div>
               </div>

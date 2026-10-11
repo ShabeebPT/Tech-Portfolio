@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, type Variants } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { services } from "@/data/portfolioConfig";
